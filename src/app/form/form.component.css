@@ -8,6 +8,7 @@
     
 }
 form{
+   
     margin-top: 50px;
     width: 100%;
     display: flex;
@@ -291,6 +292,9 @@ input::-webkit-inner-spin-button {
 }
 
 @media(max-width:520px){
+    .form-div{
+        width: 90vw;
+    }
     .h1{
         padding: 15px;
         margin-top: 10px;
@@ -304,8 +308,14 @@ input::-webkit-inner-spin-button {
     .harta{
         width: 300px;
     }  
+    select, input{
+        width: 70%;
+        height: fit-content;
+        padding: 20px 0px;
+    }
     form{
         padding-left: 30px;
+        scale: 0.9;
     }
     .choose-car-title{
         font-size: 1rem;

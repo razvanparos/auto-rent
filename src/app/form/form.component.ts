@@ -12,7 +12,7 @@ import { Rent } from './rent.model';
 export class FormComponent {
 
   cars=carData;
-  step:number=4;
+  step:number=1;
   pickup:string='';
   pdate:string = '';
   ptime:string='';
