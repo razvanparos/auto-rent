@@ -1,0 +1,115 @@
+
+
+<div class="form-div">
+    <p *ngIf="step===1" class="h1">Rent a Car <br> Fast & easy car rental services </p>
+    <p *ngIf="step===1" class="h2">✓New cars &nbsp; ✓Free delivery within city limits &nbsp;✓24/7 Reservation & Road assistance</p>
+    <div class="form2" *ngIf="step===1">
+        <form action="" class="form"  (submit)="submit()">
+        <div>
+            <p>Pick-up location<p>
+            <select  name="pick-up" id="" [(ngModel)]="pickup" >
+                <option value="" hidden>Select pick-up location</option>
+                <option value="Constanta">Constanta</option>
+                <option value="Bucuresti">Bucuresti</option>
+                <option value="Ploiesti">Ploiesti</option>
+                <option value="Pitesti">Pitesti</option>
+                <option value="Craiova">Craiova</option>
+                <option value="Galati">Galati</option>
+                <option value="Brasov">Brasov</option>
+                <option value="Sibiu">Sibiu</option>
+                <option value="Tg. Mures">Tg. Mures</option>
+                <option value="Cluj-Napoca">Cluj-Napoca</option>
+                <option value="Suceava">Suceava</option>
+                <option value="Satu Mare">Satu Mare</option>
+                <option value="Arad">Arad</option>
+                <option value="Iasi">Iasi</option>
+                <option value="Timisoara">Timisoara</option>
+            </select>
+            <p *ngIf="pickupError===1" style="color:red">Please select pick-up location</p>
+        </div>
+        
+        <div class="date">
+            <div>
+                 <p for="">Pick-up date</p>
+                 <input type="date" name="pdate" [(ngModel)]="pdate">
+                 <input type="time"  name="ptime" id="" list="picktime" [(ngModel)]="ptime">
+                 <p *ngIf="pickupTimeError===1" style="color:red; margin-top: 10px;">Pick-up date or time not available</p>
+            </div>
+            <div>
+                <p for="">Drop-off date</p>
+                <input type="date" name="ddate" id="" [(ngModel)]="ddate">
+                <input type="time" name="dtime" id="" [(ngModel)]="dtime">
+                <p *ngIf="dropTimeError===1" style="color:red; margin-top: 10px;" >Drop-off date or time not available</p>
+            </div>
+            
+        </div>
+        
+        
+        <input type="submit" value="Choose car">
+
+    </form>
+    <img src="../../assets/Romania-districts_map.png" alt="harta"  class="harta">
+    </div>
+    
+
+
+    <div *ngIf="step===2" class="choose-car">
+        <h1 class="choose-car-title">Choose your car:</h1>
+        <p *ngIf="confirmSelected===false" style="color:red; font-size: 1.3rem; margin-top: 20px;">Please select a vehicle!</p>
+        <div class="car-list" >
+            
+            <div class="car-card" (click)="carCardSelected(cars[r])" *ngFor="let i of cars; let r = index" 
+            [ngClass]="{'selectedBg': i.isSelected}"
+            [ngClass]="{'taken':cars[r].taken===true}"
+            >
+                <h1>{{i.category}}</h1>
+                <img [src]=i.img alt="asd">
+                <h1 class="price">{{i.price}} RON/day</h1>
+                <p style="color:Red" *ngIf="cars[r].taken===true">Not available in that period!</p>
+            </div>
+        </div>
+        <div class="btn-div">
+            <button class="back" (click)="back()">Go back</button>
+            <button class="rent" (click)="next()">Next step</button>
+        </div>
+        
+
+    </div>
+
+
+    <div *ngIf="step===3" class="summary-div">
+        <div>
+            <h1 style="color:var(--coral)">Summary</h1>
+        <div class="summary">
+            <p>Pick-up location {{pickup}}.</p>
+            <p>From: {{pdate}},  {{ptime}}.</p>
+            <p>Until: {{ddate}},  {{dtime}}.</p>
+            <p>Car category selected: {{carSelected}}</p>
+            <p>Price for {{nrdays}} day/s: {{carPrice * nrdays}} RON</p>
+            <div>
+                <label style="margin-right: 20px;" for="">Phone:</label>
+                <input class="phone-inp" type="tel" maxlength="10">
+            </div>
+            <p style="color: red;" *ngIf="phoneError===1;" >Please enter phone number!</p>
+            
+
+        </div>
+        <div class="btn-div ss">
+            <button class="back" (click)="back()">Go back</button>
+            <button class="rent" (click)="confirm()">Confirm reservarion</button>
+        </div>
+        </div>
+        <img height="300px" class="keys" style="margin-left: 300px;" src="../../assets/clipart3427958.png" alt="">
+    </div>
+
+    
+        <div *ngIf="step===4" class="thankyou">
+        <img width="200px" src="../../assets/[CITYPNG.COM]Blue Round Circle Badge Verified Tick Mark Icon - 4198x4198.png" alt="">
+        <h1 style="color: var(--coral);">Thank you!</h1>
+        <p style="max-width: 500px; line-height: 23px; font-weight: 600; text-align: center;">Thank you for confirming your reservation! If you ever need support, please feel free to email us at rezervari@autorent.ro.</p>
+        <button class="homebtn" (click)="home()">Home</button>
+    </div>
+    
+    
+
+</div>

@@ -1,0 +1,19 @@
+<div class="header">
+    <div class="headerimg">
+         <p class="header-logo" >AutoRent</p>
+        <img src="assets/car-logo-design-car-pictures-png-14.png" alt="" class="logoimg">
+    </div>
+   
+    
+    <div class="menu">
+        
+            <ul class="menu-list" >
+                <li [hidden]="display">Details</li>
+                <li [hidden]="display">How to use</li>
+                <li [hidden]="display">About</li>
+            </ul>
+        <img [src]="burgerSource" alt="img" class="burger" [hidden]="!display" (click)="toggle()" >
+        <img [src]="xSource" alt="img" class="x"  [hidden]="display" (click)="toggle()" >
+    </div>
+
+</div>

@@ -1,0 +1,72 @@
+*{
+    /* border: 1px solid red; */
+    color: white;
+}
+h1{
+    width: fit-content;
+    font-size: 3rem;
+}
+h2{
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+.details{
+    margin: 100px 0px;
+    background-color: var(--coral);
+    height: 400px;
+    padding-left: 300px;
+    padding-top: 100px;
+}
+.details-type{
+    display: flex;
+    margin-top: 80px;
+}
+.details-type div{
+    max-width: 25%;
+    margin-right: 90px;
+}
+
+
+.how-to-use{
+    margin-left: 300px;
+}
+.how-to-use *{
+    color: var(--coral);
+}
+.how-to-use div{
+    margin-top: 40px;
+}
+.asd{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+.cost{
+    
+    max-width: 50%;
+}
+
+
+
+@media (max-width:1377px) {
+    .asd p {
+        width: 100%;
+    }
+    .how-to-use{
+        margin-left: 10px;
+        padding-left: 0px;
+    }
+    .details{
+        padding: 30px;
+        height: fit-content;
+        padding-bottom: 50px;
+    }
+    .details-type{
+        gap: 50px;
+        width: fit-content;
+        flex-direction: column;
+    }
+    .details-type div{
+        max-width: 70%;
+    }
+}

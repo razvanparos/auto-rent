@@ -1,0 +1,58 @@
+[
+    {
+        "id":"1",
+        "category":"Electric",
+        "img":"../../assets/carsimg/electric.png",
+        "price":"500",
+        "isSelected": false,
+        "taken":false
+    },
+    {
+        "id":"2",
+        "category":"SUV",
+        "img":"../../assets/carsimg/suv2.png",
+        "price":"350",
+        "isSelected": false,
+        "taken":false
+    },
+    {
+        "id":"3",
+        "category":"Hatchback",
+        "img":"../../assets/carsimg/hatchback.png",
+        "price":"280",
+        "isSelected": false,
+        "taken":false
+    },
+    {
+        "id":"4",
+        "category":"Sedan",
+        "img":"../../assets/carsimg/sedan.png",
+        "price":"420",
+        "isSelected": false,
+        "taken":false
+    },
+    {
+        "id":"5",
+        "category":"Premium",
+        "img":"../../assets/carsimg/a6.png",
+        "price":"670",
+        "isSelected": false,
+        "taken":false
+    },
+    {
+        "id":"6",
+        "category":"Luxury",
+        "img":"../../assets/carsimg/bentley.png",
+        "price":"900",
+        "isSelected": false,
+        "taken":false
+    },
+    {
+        "id":"7",
+        "category":"Sport",
+        "img":"../../assets/carsimg/mclaren.png",
+        "price":"1500",
+        "isSelected": false,
+        "taken":false
+    }
+]
